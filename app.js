@@ -48,10 +48,9 @@ textArea.addEventListener('input', ()=> {
     outputDiv.textContent += encryptedText;
     
     textArea.value = '';
-
-
     console.log('Boton clicado', encryptedText);
   });
+  outputDiv.textContent = '';
 })
 
 
