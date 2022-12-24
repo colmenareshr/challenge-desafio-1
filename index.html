@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mensagens Secretas: Descubra o conteúdo oculto</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-logo">
+        <img src="./img/logo-alura-cel.svg" alt="Logo Alura" />
+      </div>
+    </header>
+    <!-- Create a form with a textara and two buttons -->
+    <form >
+      <!-- Create a textara so that the user can write -->
+      <textarea id="input-text"  rows="5" cols="50" placeholder="Digite seu texto"></textarea>
+
+      <!-- Group the two buttons -->
+      <div class="buttons">
+        <p>
+          <img src="./img/atention.svg" alt="atention" /> Apenas letras
+          minúsculas e sem acento.
+        </p>
+        <button id="cryptograph-button" class="dark-blue">Criptografar</button>
+        <button>Descriptografar</button>
+      </div>
+    </form>
+    <!-- Show the coded text -->
+    <div id="output-text"></div>
+    <!-- Create a footer the developer's name -->
+    <footer>
+      <p>
+        Desenvolvido com <span style="color: #ff0000">&#9829;</span> por
+        Humberto Colmenares
+      </p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
