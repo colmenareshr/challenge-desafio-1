@@ -4,12 +4,11 @@ const encryptButton = document.getElementById('encrypt-button');
 const decryptButton = document.getElementById('decrypt-button');
 
 textArea.addEventListener('input', () => {
-  let inputText = textArea.value;
   //We validate that there are no special Mayustulas and characters
   const regex = /^[a-z ,.]*$/;
   const isValid = textArea.value.match(regex);
   if (!isValid) {
-    inputText = inputText.replace(/[^a-z]/g, '');
+    textArea.value = textArea.value.replace(/[^a-z ]/g, '');
   }
   //We are it for all the characters of the input
 });
@@ -39,7 +38,9 @@ function decrypting(text) {
     const character = text[i];
     if(character in mapping) {
       decryptedText += character;
-      i += map
+      i += mapping[character].length - 1
+    }else {
+      decryptedText += character
     }
   }
   return decryptedText;
