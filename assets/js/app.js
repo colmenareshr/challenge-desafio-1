@@ -10,7 +10,7 @@ textArea.addEventListener('input', () => {
   if (!isValid) {
     textArea.value = textArea.value.replace(/[^a-z ]/g, '');
   }
-  //We are it for all the characters of the input
+  outputDiv.textContent = '';
 });
 
 const mapping = {
@@ -56,7 +56,7 @@ encryptButton.addEventListener('click', (e) => {
 decryptButton.addEventListener('click', (e) => {
   e.preventDefault();
   let decryptText = decrypting(textArea.value);
-  outputDiv.textContent = '';
+  // outputDiv.textContent = '';
   outputDiv.textContent = decryptText;
   textArea.value = '';
 });
