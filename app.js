@@ -25,6 +25,7 @@ function validateInput() {
 // We call the function when the page is loaded
 document.addEventListener('DOMContentLoaded', validateInput);
 
+// This object contains the character mapping to encrypt
 const mapping = {
   e: 'enter',
   i: 'imes',
@@ -33,7 +34,20 @@ const mapping = {
   u: 'ufat',
 };
 
+// We create an inverse mapping to facilitate the deciphering
 const inverseMapping = {};
 for (const [key, value] of Object.entries(mapping)) {
   inverseMapping[value] = key;
+  console.log(inverseMapping);
 }
+
+// This function transforms a text using the specified mapping
+function transformText(text, mapping) {
+  let transformedText = '';
+  for (let i = 0; i < text.length; i++) {
+    const character = text[i];
+    transformedText += mapping[character] || character;
+  }
+  return transformedText;
+}
+
