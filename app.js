@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function validateInput() {
-  const textArea = document.getElementById('input-text');
   textArea.addEventListener('input', () => {
     // We validate that there are no capital letters or special characters
     const regex = /^[a-z ,.]*$/;
@@ -37,8 +36,7 @@ const mapping = {
 // We create an inverse mapping to facilitate the deciphering
 const inverseMapping = {};
 for (const [key, value] of Object.entries(mapping)) {
-  inverseMapping[value] = key;
-  console.log(inverseMapping);
+  inverseMapping[value] = key; 
 }
 
 // This function transforms a text using the specified mapping
@@ -51,3 +49,12 @@ function transformText(text, mapping) {
   return transformedText;
 }
 
+encryptButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  let encryptedText = transformText(textArea.value, mapping);
+  textArea.value = encryptedText
+  console.log(textArea.value);
+  outputDiv.textContent = encryptedText;
+  textArea.value = '';
+  document.querySelector('#copy-btn').classList.remove('hidden-btn');
+});
