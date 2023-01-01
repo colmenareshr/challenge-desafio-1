@@ -120,18 +120,19 @@ cursor: pointer;
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  gap: 7rem;
 }
 
 .input-section {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 80vh;
   width: 60%;
   padding: 4rem;
 }
 
 .form-area {
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   margin-left: 60px;
 }
 
@@ -152,31 +153,25 @@ textarea::placeholder {
   margin-top: 190px;
 }
 
-.output-text {
+.output-area{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  justify-content: center;
+  min-height: 88vh;
   width: 30%;
   padding: 3rem;
   margin-right: 2rem;
   background-color: #fff;
   border-radius: 32px;
-  
-}
-
-.text-area {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
-.text-area image {
-  width: 100%;
+.output-area:has(.active) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .copy-btn {
@@ -192,22 +187,6 @@ textarea::placeholder {
 
 .hidden-btn {
   display: none;
-}
-
-.active {
-  min-height: 90vh;
-  width: 400px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: left;
-  margin-right: 2rem;
-  flex-wrap: wrap;
-  font-size: 1.2em;
-  list-style: 1.2em;
-  background-color: #fff;
-  color: #a4a5a6;
-  border-radius: 32px;
-  padding: 3rem 1rem;
 }
 
 .bold {

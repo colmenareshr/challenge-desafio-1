@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="header-logo">
-        <img src="./img/logo-alura-cel.svg" alt="Logo Alura" />
+        <a href="index.html"><img src="./img/logo-alura-cel.svg" alt="Logo Alura" /></a>
       </div>
     </header>
     <!-- Create a form with a textara and two buttons -->
@@ -35,24 +35,32 @@
               <button id="encrypt-button" class="primary-btn">
                 Criptografar
               </button>
-              <button id="decrypt-button" class="secondary-btn">Descriptografar</button>
+              <button id="decrypt-button" class="secondary-btn">
+                Descriptografar
+              </button>
             </div>
           </form>
         </div>
       </section>
 
       <!-- Show the coded text -->
-      <section  class="output-text active">
-        <div id="output-text" class="text-area">
+      <section class="output-area">
+        <div id="result-text" class="text-area">
           <div id="output-default-content">
-            <img src="./img/background.svg" alt="background Alura" id="background-img" />
-            <p class="bold">Nenhuma mensagem encontrada</p>
-            <p>
-              Digite um texto que você deseja criptografar ou descriptografar.
-            </p>
+            <img
+              src="./img/background.svg"
+              alt="background Alura"
+              id="background-img"
+            />
+            <div>
+              <p class="bold">Nenhuma mensagem encontrada</p>
+              <p>
+                Digite um texto que você deseja criptografar ou descriptografar.
+              </p>
+            </div>
           </div>
         </div>
-        <div  class="copy-btn">
+        <div class="copy-btn">
           <button id="copy-btn" class="secondary-btn hidden-btn">Copiar</button>
         </div>
       </section>

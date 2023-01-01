@@ -1,5 +1,5 @@
 const textArea = document.getElementById('input-text');
-const outputDiv = document.getElementById('output-text');
+const outputArea = document.getElementById('result-text');
 const encryptButton = document.getElementById('encrypt-button');
 const decryptButton = document.getElementById('decrypt-button');
 const backgroundImage = document.getElementById('background-img');
@@ -36,7 +36,7 @@ const mapping = {
 // We create an inverse mapping to facilitate the deciphering
 const inverseMapping = {};
 for (const [key, value] of Object.entries(mapping)) {
-  inverseMapping[value] = key; 
+  inverseMapping[value] = key;
 }
 
 // This function transforms a text using the specified mapping
@@ -51,10 +51,23 @@ function transformText(text, mapping) {
 
 encryptButton.addEventListener('click', (e) => {
   e.preventDefault();
-  let encryptedText = transformText(textArea.value, mapping);
-  textArea.value = encryptedText
-  console.log(textArea.value);
-  outputDiv.textContent = encryptedText;
-  textArea.value = '';
-  document.querySelector('#copy-btn').classList.remove('hidden-btn');
+
+  // We encrypted the text of textarea
+  const encryptText = transformText(textArea.value, mapping);
+
+  // We create a <p> element to show the encrypted text
+  const encryptedTextElement = document.createElement('p');
+  encryptedTextElement.classList.add('active');
+  encryptedTextElement.textContent = encryptText;
+
+  // We replace the image and text with the <p> element with the encrypted text
+  outputArea.innerHTML = '';
+  outputArea.appendChild(encryptedTextElement);
+
+  // We show the copy button
+  copyBtn.classList.remove('hidden-btn');
+  copyBtn.classList.add('visible-btn');
+  textArea.value = ''
 });
+
+
