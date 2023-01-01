@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,22 +14,50 @@
       </div>
     </header>
     <!-- Create a form with a textara and two buttons -->
-    <form >
-      <!-- Create a textara so that the user can write -->
-      <textarea id="input-text"  rows="5" cols="50" placeholder="Digite seu texto"></textarea>
+    <main class="main-section">
+      <section class="input-section">
+        <div class="form-area">
+          <form>
+            <!-- Create a textara so that the user can write -->
+            <textarea
+              id="input-text"
+              rows="5"
+              cols="50"
+              placeholder="Digite seu texto"
+            ></textarea>
 
-      <!-- Group the two buttons -->
-      <div class="buttons">
-        <p>
-          <img src="./img/atention.svg" alt="atention" /> Apenas letras
-          minúsculas e sem acento.
-        </p>
-        <button id="encrypt-button" class="dark-blue">Criptografar</button>
-        <button id="decrypt-button">Descriptografar</button>
-      </div>
-    </form>
-    <!-- Show the coded text -->
-    <div id="output-text"></div>
+            <!-- Group the two buttons -->
+            <div class="buttons">
+              <p>
+                <img src="./img/atention.svg" alt="atention" /> Apenas letras
+                minúsculas e sem acento.
+              </p>
+              <button id="encrypt-button" class="primary-btn">
+                Criptografar
+              </button>
+              <button id="decrypt-button" class="secondary-btn">Descriptografar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Show the coded text -->
+      <section  class="output-text active">
+        <div id="output-text" class="text-area">
+          <div id="output-default-content">
+            <img src="./img/background.svg" alt="background Alura" id="background-img" />
+            <p class="bold">Nenhuma mensagem encontrada</p>
+            <p>
+              Digite um texto que você deseja criptografar ou descriptografar.
+            </p>
+          </div>
+        </div>
+        <div  class="copy-btn">
+          <button id="copy-btn" class="secondary-btn hidden-btn">Copiar</button>
+        </div>
+      </section>
+    </main>
+
     <!-- Create a footer the developer's name -->
     <footer>
       <p>
@@ -37,6 +65,6 @@
         Humberto Colmenares
       </p>
     </footer>
-    <script src="./assets/js/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
