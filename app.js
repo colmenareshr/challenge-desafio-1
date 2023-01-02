@@ -18,6 +18,7 @@ textArea.addEventListener('input', () => {
   }
 });
 
+//We create an object with the key to encrying the text
 const mapping = {
   e: 'enter',
   i: 'imes',
@@ -26,6 +27,7 @@ const mapping = {
   u: 'ufat',
 };
 
+// Create the function to encrypt the text
 function encrypting(text, mapping) {
   let encryptedText = '';
 
@@ -36,6 +38,7 @@ function encrypting(text, mapping) {
   return encryptedText;
 }
 
+// Create the function to discard the text
 function decrypting(text) {
   let decryptedText = '';
 
@@ -69,6 +72,9 @@ encryptButton.addEventListener('click', (e) => {
   copyBtn.classList.remove('hidden-btn');
   copyBtn.classList.add('visible-btn');
   textArea.value = '';
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(encryptText);
+  });
 });
 
 decryptButton.addEventListener('click', (e) => {
@@ -79,4 +85,7 @@ decryptButton.addEventListener('click', (e) => {
   decryptedTextElement.textContent = decryptText;
   outputArea.innerHTML = '';
   outputArea.appendChild(decryptedTextElement);
+  copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(decryptText);
+  });
 });
