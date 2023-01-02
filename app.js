@@ -54,6 +54,7 @@ function decrypting(text) {
   return decryptedText;
 }
 
+
 encryptButton.addEventListener('click', (e) => {
   e.preventDefault();
   // We encrypted the text of textarea
@@ -72,10 +73,12 @@ encryptButton.addEventListener('click', (e) => {
   copyBtn.classList.remove('hidden-btn');
   copyBtn.classList.add('visible-btn');
   textArea.value = '';
+  // Function of copying the text
   copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(encryptText);
   });
 });
+
 
 decryptButton.addEventListener('click', (e) => {
   e.preventDefault();
@@ -85,6 +88,8 @@ decryptButton.addEventListener('click', (e) => {
   decryptedTextElement.textContent = decryptText;
   outputArea.innerHTML = '';
   outputArea.appendChild(decryptedTextElement);
+
+  // Copying the text
   copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(decryptText);
   });
